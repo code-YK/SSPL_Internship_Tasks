@@ -18,8 +18,7 @@ if __name__ == "__main__":
         operations = []
         for file_name, content in data.items():
             operations.append(executor.submit(write_to_file, file_name, content))
-        
-        # Wait for all futures to complete
+    
         for i in operations:
             i.result()
 
